@@ -1,1 +1,192 @@
+HTML
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1مدرسة المستقبل ن</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .intro-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        iframe {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>مدرسة البيان</h1>
+</header>
+
+<!-- صورة رئيسية عند الدخول -->
+<img src="https://images.unsplash.com/photo-1596496052903-6a0c32a1aa3d" alt="صورة للمدرسة" class="intro-image">
+
+<section>
+    <h2>نبذة عن المدرسة</h2>
+    <p>مدرسة البيان تهدف لتقديم تعليم شامل لجميع الطلاب مع التركيز على التعلم الذاتي والأنشطة الإضافية وتنمية المهارات الشخصية.</p>
+</section>
+
+<section>
+    <h2>جدول الحصص</h2>
+    <table>
+        <tr>
+            <th>اليوم</th>
+            <th>الحصة 1</th>
+            <th>الحصة 2</th>
+            <th>الحصة 3</th>
+            <th>الحصة 4</th>
+        </tr>
+        <tr>
+            <td>السبت</td>
+            <td>رياضيات</td>
+            <td>لغة عربية</td>
+            <td>علوم</td>
+            <td>تاريخ</td>
+        </tr>
+        <tr>
+            <td>الأحد</td>
+            <td>لغة إنجليزية</td>
+            <td>رياضيات</td>
+            <td>علوم</td>
+            <td>تربية فنية</td>
+        </tr>
+        <!-- يمكنك إضافة باقي الأيام -->
+    </table>
+</section>
+
+<section>
+    <h2>الدروس وشرحها</h2>
+    <div>
+        <h3>رياضيات</h3>
+        <p>شرح مفصل للجبر، الهندسة، والإحصاء مع أمثلة وتمارين.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZXqGjWojg1E" title="شرح رياضيات" frameborder="0" allowfullscreen></iframe>
+
+        <h3>لغة عربية</h3>
+        <p>شرح النحو والصرف والبلاغة والقراءة مع تمارين تفاعلية.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Hw5Wpu4eN1I" title="شرح لغة عربية" frameborder="0" allowfullscreen></iframe>
+
+        <h3>علوم</h3>
+        <p>تعلم الفيزياء والكيمياء والأحياء بطريقة مبسطة مع تجارب عملية.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0T8QZ4v8okU" title="شرح علوم" frameborder="0" allowfullscreen></iframe>
+
+        <h3>تاريخ</h3>
+        <p>دراسة الأحداث التاريخية الهامة وفهم تأثيرها على المجتمع.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8uwzWZZQ1oU" title="شرح تاريخ" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section>
+    <h2>الامتحان</h2>
+    <p>امتحان مكوّن من 30 سؤال:</p>
+    <ol id="exam-questions"></ol>
+    <button onclick="generateExam()">عرض الأسئلة</button>
+</section>
+
+<section>
+    <h2>أيام العطل</h2>
+    <ul>
+        <li>الجمعة</li>
+        <li>الأعياد الرسمية</li>
+    </ul>
+</section>
+
+<script>
+    const questions = [
+        "س1: ما هي عاصمة فرنسا؟",
+        "س2: ما هو أكبر كوكب في المجموعة الشمسية؟",
+        "س3: من هو مؤلف رواية 'ألف ليلة وليلة'؟",
+        "س4: ما هو حاصل جمع 5 + 7؟",
+        "س5: ما هو الرمز الكيميائي للماء؟",
+        "س6: كم عدد الحروف في الأبجدية العربية؟",
+        "س7: من اكتشف الجاذبية الأرضية؟",
+        "س8: ما هو أطول نهر في العالم؟",
+        "س9: ما هو اسم مؤسس مدرسة البيان؟",
+        "س10: اذكر ثلاثة فصول من فصول السنة.",
+        "س11: ما هو الحيوان الذي يُعرف بملك الغابة؟",
+        "س12: ما هو الكوكب الأحمر؟",
+        "س13: ما معنى كلمة 'ابتسامة'؟",
+        "س14: ما هي وحدة قياس الطول؟",
+        "س15: ما هو اسم أكبر محيط في العالم؟",
+        "س16: اذكر نوعين من الفواكه.",
+        "س17: من هو مؤلف كتاب 'مئة عام من العزلة'؟",
+        "س18: ما هو الغاز الذي نتنفسه؟",
+        "س19: ما هو الطائر الذي لا يطير؟",
+        "س20: ما هو اليوم الأول من الأسبوع؟",
+        "س21: ما هي لغة البرمجة التي تستخدم لبناء صفحات الويب؟",
+        "س22: ما هو العضو المسؤول عن ضخ الدم في الجسم؟",
+        "س23: ما هي الدولة التي تقع فيها مدينة طوكيو؟",
+        "س24: ما هو الحيوان الذي يعيش في الماء واليابسة؟",
+        "س25: ما هو العلم الذي يدرس الكون؟",
+        "س26: ما هو أكبر كوكب غازي في المجموعة الشمسية؟",
+        "س27: ما هو المعدن المستخدم لصنع العملات؟",
+        "س28: ما هي عاصمة مصر؟",
+        "س29: كم عدد أيام الأسبوع؟",
+        "س30: ما هو الحيوان الذي يطير ليلاً ويصطاد الحشرات؟"
+    ];
+
+    function generateExam() {
+        const list = document.getElementById('exam-questions');
+        list.innerHTML = '';
+        questions.forEach(q => {
+            const li = document.createElement('li');
+            li.textContent = q;
+            list.appendChild(li);
+        });
+    }
+</script>
+
+</body>
+</html>
